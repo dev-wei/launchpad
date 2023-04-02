@@ -1,0 +1,10 @@
+- name: install latest iperf3 on all hosts
+  hosts: "*"
+  become: yes
+  tasks:
+    - name: install iperf3
+      apt:
+        name: iperf3
+        state: present
+        update_cache: true
+      become: true
